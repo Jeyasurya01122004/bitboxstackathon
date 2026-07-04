@@ -22,6 +22,7 @@ body{
     backdrop-filter:blur(18px);
     box-shadow:0 10px 30px rgba(0,0,0,.08);
     z-index:1000;
+    
 }
 
 /* Logo */
@@ -170,81 +171,71 @@ nav{
       Mobile (320px-480px)
 =========================== */
 
-@media screen and (min-width:320px) and (max-width:480px){
+/* ================= MOBILE ================= */
+
+@media (max-width:480px){
 
 .header{
     height:70px;
-    padding:0 20px;
+    padding:0 16px;
+    justify-content:space-between;
 }
 
 .logo img{
-    width:170px;
+    width:140px;
+    margin:0;
 }
+
+/* Hide desktop button */
 
 .book-btn{
     display:none;
 }
 
-/* Menu */
+/* Navigation */
 
 .nav-links{
-
     position:fixed;
-
     top:70px;
-
     right:-100%;
-
-    width:250px;
-
-    height:100vh;
-
-    background:white;
-
+    width:75%;
+    max-width:280px;
+    height:calc(100vh - 70px);
+    background:#fff;
+    display:flex;
     flex-direction:column;
-
-    justify-content:flex-start;
-
     align-items:flex-start;
-
-    gap:30px;
-
-    padding:40px 25px;
-
-    transition:.4s;
-
-    box-shadow:-10px 0 30px rgba(0,0,0,.1);
-
+    gap:22px;
+    padding:35px 20px;
+    transition:.35s ease;
+    box-shadow:-5px 0 20px rgba(0,0,0,.15);
+    overflow-y:auto;
+    z-index:999;
 }
 
 .nav-links.active{
-
     right:0;
-
 }
 
 .nav-links li{
-
     width:100%;
-
 }
 
 .nav-links li a{
-
-    font-size:18px;
-
+    display:block;
+    width:100%;
+    font-size:17px;
+    padding:8px 0;
 }
 
 .menu-icon{
-
-    display:block;
-
-    font-size:28px;
-
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    color:#222;
     cursor:pointer;
-
-    z-index:2000;
-
+    z-index:1001;
 }
 
 }

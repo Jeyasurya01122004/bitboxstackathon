@@ -155,50 +155,57 @@ transform:translateY(0);
    Mobile View (320px - 480px)
 =========================== */
 
-@media (min-width:320px) and (max-width:480px){
+@media (max-width:480px){
 
 .hero{
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 20px 50px;
-    text-align: center;
-    gap: 40px;
+    display:flex;
+    flex-direction:column-reverse;
+    width:100%;
+    min-height:auto;
+    padding:90px 20px 50px;
+    gap:40px;
+    overflow:hidden;
 }
 
 .hero-left,
 .hero-right{
-    width: 100%;
+    width:100%;
+    max-width:100%;
+}
+
+.hero-right{
+    display:flex;
+    justify-content:center;
 }
 
 .hero-right img{
-    width: 85%;
-    margin: auto;
+    width:75%;
+    max-width:300px;
+}
+
+.hero-left{
+    text-align:center;
 }
 
 .hero-left h1{
-    font-size: 52px;
-    line-height: 1.1;
+    font-size:52px;
 }
 
 .hero-left p{
-    width: 100%;
-    font-size: 16px;
-    margin: 20px 0;
+    width:100%;
+    font-size:16px;
 }
 
 .hero-btns{
-    flex-direction: column;
-    gap: 15px;
+    display:flex;
+    flex-direction:column;
+    width:100%;
 }
 
 .order-btn,
 .video-btn{
-    width: 100%;
-    justify-content: center;
+    width:100%;
+    justify-content:center;
 }
 
-.tag{
-    font-size: 14px;
-}
 }

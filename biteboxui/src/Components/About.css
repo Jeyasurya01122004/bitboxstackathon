@@ -482,129 +482,37 @@ transform:translateY(0);
    MOBILE
 =========================== */
 
-@media (min-width:320px) and (max-width:480px){
+@media (max-width:480px){
 
 .about{
-
-padding:70px 20px;
-
-}
-
-.about-title h2{
-
-font-size:38px;
-
-}
-
-.about-title p{
-
-width:100%;
-font-size:16px;
-
+    width:100%;
+    padding:60px 20px;
 }
 
 .about-wrapper{
+    display:flex;
+    flex-direction:column;
+}
 
-grid-template-columns:1fr;
-gap:40px;
-
+.left-side,
+.right-side{
+    width:100%;
 }
 
 .about-image{
-
-border-radius:18px;
-
+    width:100%;
 }
-
-/* Reserve Card */
 
 .reserve-card{
-
-width:100%;
-margin-top:20px;
-
-display:flex;
-flex-direction:column;
-
-text-align:center;
-
-padding:25px;
-
+    width:100%;
+    margin-top:20px;
 }
-
-.reserve-content h3{
-
-font-size:28px;
-
-}
-
-.reserve-contact{
-
-justify-content:center;
-
-}
-
-.reserve-contact h4{
-
-font-size:22px;
-
-}
-
-.reserve-card button{
-
-width:100%;
-margin-top:15px;
-
-}
-
-/* Right */
-
-.right-side{
-
-text-align:center;
-
-}
-
-.right-side h2{
-
-font-size:38px;
-
-}
-
-.feature{
-
-flex-direction:column;
-
-text-align:center;
-
-border:none;
-
-padding:20px;
-
-}
-
-.feature-icon{
-
-width:65px;
-height:65px;
-font-size:24px;
-
-}
-
-.feature h3{
-
-font-size:24px;
-
-}
-
-/* Stats */
 
 .stats{
-
-grid-template-columns:repeat(2,1fr);
-
+    grid-template-columns:1fr 1fr;
 }
 
+}
 .stat{
 
 padding:20px;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Contact.css";
+import axios from "axios";
 
 export default function Contact() {
   const [data, setData] = useState({
@@ -53,13 +54,35 @@ export default function Contact() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const submit = (e) => {
+  const submit =  async (e) => {
     e.preventDefault();
 
     if (validate()) {
-      console.log(data);
+     try {
 
-      alert("Form Submitted Successfully");
+  const response = await axios.post(
+    "http://localhost:11000/Contacts",
+    data
+  );
+
+  alert(response.data.message);
+
+  setData({
+    uname: "",
+    uemail: "",
+    usubject: "",
+    umessage: "",
+  });
+
+  setErrors({});
+
+} catch (error) {
+
+  console.log(error);
+
+  alert("Message Sending Failed");
+
+}
 
       setData({
         uname: "",

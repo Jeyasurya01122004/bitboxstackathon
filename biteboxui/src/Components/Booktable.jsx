@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Booktable.css";
 import tableImg from "../assets/booktableimg.jpeg";
+import axios from "axios";
+
 
 const Booking = () => {
   const [formData, setFormData] = useState({
@@ -79,7 +81,7 @@ const Booking = () => {
   };
 
   // Submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const validationErrors = validateForm();
@@ -87,8 +89,34 @@ const Booking = () => {
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
-      console.log("Booking Data:", formData);
-      alert("Booking Successful!");
+try {
+
+  const response = await axios.post(
+    "http://localhost:11000/BookTable",
+    formData
+  );
+
+  alert(response.data.message);
+
+  setFormData({
+    name: "",
+    email: "",
+    phone: "",
+    date: "",
+    time: "",
+    people: "",
+    message: "",
+  });
+
+  setErrors({});
+
+} catch (error) {
+
+  console.log(error);
+
+  alert("Booking Failed");
+
+}
 
       setFormData({
         name: "",

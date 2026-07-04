@@ -14,24 +14,28 @@ import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
+   <BrowserRouter>
 
-      <div className="page-transition">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/menu" element={<MenuPage />} />
-          <Route path="/events" element={<EventsPage />} />
-          <Route path="/chef" element={<ChefPage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/booking" element={<BookingPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
-      </div>
+  <Header />
 
-      <Footer />
-    </BrowserRouter>
+  <main className="main-content">
+    <div className="page-transition">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/menu" element={<MenuPage />} />
+        <Route path="/events" element={<EventsPage />} />
+        <Route path="/chef" element={<ChefPage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/booking" element={<BookingPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+    </div>
+  </main>
+
+  <Footer />
+
+</BrowserRouter>
   );
 }
 
