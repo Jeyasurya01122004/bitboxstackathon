@@ -160,7 +160,7 @@ transform:scale(1.15);
 }
 
 }
-animation:floatCard 5s ease-in-out infinite;
+/* animation:floatCard 5s ease-in-out infinite; */
 
 @keyframes floatCard{
 
