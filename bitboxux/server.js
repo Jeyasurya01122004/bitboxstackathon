@@ -1,12 +1,17 @@
 const express = require("express");
 const { default: mongoose } = require("mongoose");
 const cors = require("cors");
+require("dotenv").config();
+
+
 
 const BookingDB = require("./modal/Booking");
 const ContactDB = require("./modal/Contact");
 const NewsletterDB = require("./modal/Newsletter");
 
-const port = 11000;
+// const port = 11000;
+const port = process.env.PORT || 5000;
+
 
 const app = express();
 
@@ -38,15 +43,15 @@ app.post("/BookTable", async (req, res) => {
 
     try {
 
-        if (
-            !name ||
+        if (!name ||
             !email ||
             !phone ||
             !date ||
             !time ||
             !people ||
             !message
-        ) {
+        ) 
+        {
             return res.status(400).json({
                 message: "Please fill all fields"
             });
@@ -166,13 +171,23 @@ app.post("/Newsletter", async (req, res) => {
 
 // MongoDB Connection
 
-mongoose.connect("mongodb://127.0.0.1:27017/BiteBox")
-.then(() => {
-    console.log("MongoDB Connected Successfully");
-})
-.catch((err) => {
-    console.log("Database Connection Failed", err);
-});
+// mongoose.connect("mongodb://127.0.0.1:27017/BiteBox")
+// .then(() => {
+//     console.log("MongoDB Connected Successfully");
+// })
+// .catch((err) => {
+//     console.log("Database Connection Failed", err);
+// });
+
+
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => {
+        console.log("MongoDB Connected Successfully");
+    })
+    .catch((err) => {
+        console.log("Database Connection Failed", err);
+    });
+
 
 // Server
 

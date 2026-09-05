@@ -11,6 +11,8 @@ const newsletterSchema = new mongoose.Schema({
     collection:"Newsletter"
 });
 
+
+
 module.exports = mongoose.model(
     "Newsletter",
     newsletterSchema,
