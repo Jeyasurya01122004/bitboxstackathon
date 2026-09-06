@@ -1,6 +1,6 @@
 import "./Menu.css";
 import { useState } from "react";
-import menuData from "../Data/menuData.jsx"
+import menuData from "../Data/menuData.js"
 
 function Menu() {
 
